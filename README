@@ -16,3 +16,35 @@ several of them using the Restructured Text markup notation.
 Please read the Documentation/process/changes.rst file, as it contains the
 requirements for building and running the kernel, and information about
 the problems which may result by upgrading your kernel.
+
+
+Steps to reproduce the assignment to discover vmx features
+==========================================================
+
+Install vmware fusion
+In the settings of vmware fusion in processor and memory section, select checkbox to enable the hypervisor applications in the virtual machine.
+Downloaded the ubuntu iso	
+Installed git,make,gcc 
+Clone the forked repo - https://github.com/nayak-codebase/linux
+Create a folder inside linux ,cmpe283 and place the files Make and cmpe283-1.c  provided in the assignment 
+cd  to cmpe283 folder
+Edit the  cmpe283-1.c with querying vmx features
+Run the command : make all
+Load the module : sudo insmod ./cmpe283-1.ko
+Unload the module : sudo rmmod ./cmpe283-1.ko
+Print the logs to the file log_info.txt  : dmesg >  log_info.txt
+
+Team Contribution
+
+Praveen Prabhakar Nayak
+	Researched Intel sdm document which was available from previous lectures, to identify the primary and secondary processor based controls.
+
+	Created a struct object with the primary and secondary processor based capability information.
+	To check if secondary processor based controls are available, implemented a function to check
+     	if the 63 bit is set. This information was available in following SDM section
+ 	(A.3.3 Secondary Processor-Based VM-Execution Controls(A-4 Vol. 3D) 
+	Made a call to this function from detect vmx features function.
+
+Yadnashree Savant
+	
+
