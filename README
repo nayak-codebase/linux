@@ -45,6 +45,12 @@ Praveen Prabhakar Nayak
  	(A.3.3 Secondary Processor-Based VM-Execution Controls(A-4 Vol. 3D) 
 	Made a call to this function from detect vmx features function.
 
-Yadnashree Savant
+Yadnyshree Savant
+	Referred the Intel SDM to identify the entry and exit controls for VMX
+	
+	Created a Struct to check the entry and exit control capability information.  
+	Added a call to the above from detect vmx features function.
+	All the above was referred from Intel SDM volume 3C, section 24.8.1 Table 24-13
+
 	
 
