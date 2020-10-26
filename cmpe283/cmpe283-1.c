@@ -60,6 +60,50 @@ struct capability_info procbased_primary[21] =
 	{ 30, "PAUSE exiting" },
 	{ 31, "Activate secondary controls" }
 };
+/*
+ * Entry Control capabilities
+ * SDM volume 3C, section 24.8.1 Table 24-13
+ */
+struct capability_info entry_ctrl[12] =
+{
+	{ 2, "Load debug controls" },
+	{ 9, "IA-32e mode guest" },
+	{ 10, "Entry to SMM" },
+	{ 11, "Deactivate dual-monitor treatment " },
+	{ 13, "Load IA32_PERF_GLOBAL_CTRL" },
+	{ 14, "Load IA32_PAT" },
+	{ 15, "Load IA32_EFER" },
+	{ 16, "Load IA32_BNDCFGS" },
+	{ 17, "Conceal VM entries from intel PT" },
+    { 18,"Load IA32_RTIT_CTL"},
+    { 20, "Load CET state"},
+    { 22, "Load PKRS"}
+};
+
+
+/*
+ * Exit Control capabilities
+ * SDM volume 3C, section 24.7.1 Table 24-11
+ */
+struct capability_info exit_ctrl[14] =
+{
+	{ 2, "Save debug controls" },
+	{ 9, "Host address-space size" },
+	{ 12, "Load IA32_PERF_GLOB AL_CTRL" },
+	{ 15, "Acknowledge interrupt on exit " },
+	{ 18, "Save IA32_PAT" },
+	{ 19, "Load IA32_PAT" },
+	{ 20, "Save IA32_EFER" },
+	{ 21, "Load IA32_EFER" },
+	{ 22, "Save VMX-preemption timer value" },
+	{ 23, "Clear IA32_BNDCFGS" },
+	{ 24, "Conceal VM exits from Intel PT" },
+    { 25,"Clear IA32_RTIT_CTL"},
+    { 28, "Load CET state"},
+    { 29, "Load PKRS"}
+
+};
+
 
 /*
  * Secondary Proc-based capabilities
